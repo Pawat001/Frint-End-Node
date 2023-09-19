@@ -24,7 +24,7 @@ app.get("/",async (req, res) => {
 
 app.get("/book/:id", async (req, res) => {
     try {
-        const response = await axios.get(base_url + '/books' + req.params.id);
+        const response = await axios.get(base_url + '/books/' + req.params.id);
         res.render("book", { book: response.data });
     } catch (err) {
         console.error(err);
@@ -61,7 +61,7 @@ app.get("/update/:id", async (req, res) => {
 app.post("/update/:id", async (req, res) => {
     try {
         const data = { title: req.body.title, author: req.body.author };
-        await axios.HttpStatusCode(base_url + '/books/' + req.params.id, data);
+        await axios.put(base_url + '/books/' + req.params.id, data);
         res.redirect("/");
     } catch (err) {
         console.error(err);
@@ -79,6 +79,6 @@ app.get("/delete/:id", async (req, res) => {
     }
 });
 
-app.listen(5500, () => {
-    console.log('Server started on port 5500');
+app.listen(80, () => {
+    console.log('Server started on port 80');
     });
