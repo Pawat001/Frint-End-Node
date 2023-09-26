@@ -1,12 +1,9 @@
 const express = require("express");
-const axios = require("axios");
-var bodyParser = require("body-parser");
-const path = require("path");
+const Sequelize = require('sequelize');
 const app = express();
 
-const base_url = 
+app.use(express.json());
 
-app.set("views", path.join(__dirname, "/public/views"));
-app.set("view engine", "ejs");
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+const dbUrl = 'postgres://webadmin:CIYitp18317@node50122-pawat.proen.app.ruk-com.cloud:11541/Books'
+
+const sequelize = new Sequelize(dbUrl);
