@@ -1,11 +1,13 @@
-const express = require('express');
-const axios = require('axios');
+const express = require("express");
+const axios = require("axios");
+var bodyParser = require("body-parser");
+const path = require("path");
 const app = express();
-var bodyParser = require('body-parser');
 
 
 const base_url = "http://localhost:3000"
 
+app.set("views", path.join(__dirname, "/public/views"));
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -31,6 +33,7 @@ app.get("/book/:id", async (req, res) => {
         res.status(500).send('Error');
     }
 });
+ 
 
 app.get("/create", (req, res) => {
     res.render("create");
@@ -79,6 +82,6 @@ app.get("/delete/:id", async (req, res) => {
     }
 });
 
-app.listen(80, () => {
-    console.log('Server started on port 80');
+app.listen(8080, () => {
+    console.log('Server started on port 8080');
     });
