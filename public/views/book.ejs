@@ -15,10 +15,11 @@
             <td><%= book.title %></td>
             <td><%= book.author %></td>
         </tr>
-    <h1><%= book.title %></h1>
-    <p>Author: <%= book.author %></p>
-    <a href="/update/<%= book.id %>">Edit</a>
-    <a href="/delete/<%= book.id %>">Delete</a>
-    <a href="/">Back to List</a>
+    </table>
+    <div class="link-center">
+        <a href="/update/<%= book.id %>">Edit</a>
+        <a href="/delete/<%= book.id %>">Delete</a>
+        <a href="/">Back to List</a>
+    </div>
 </body>
 </html>
