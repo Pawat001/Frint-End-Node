@@ -5,6 +5,16 @@
     <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
+    <h1>View book</h1>
+    <table class="book-table">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+        <tr>
+            <td><%= book.title %></td>
+            <td><%= book.author %></td>
+        </tr>
     <h1><%= book.title %></h1>
     <p>Author: <%= book.author %></p>
     <a href="/update/<%= book.id %>">Edit</a>
